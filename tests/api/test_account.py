@@ -558,7 +558,7 @@ def test_user_with_cancelled_fulfillments(
     order = data["orders"]["edges"][0]["node"]
     assert order["id"] == order_id
     fulfillments = order["fulfillments"]
-    assert len(fulfillments) == 1
+    assert len(fulfillments) == 2
     assert fulfillments[0]["status"] == FulfillmentStatus.FULFILLED.upper()
     assert fulfillments[1]["status"] == FulfillmentStatus.CANCELED.upper()
 
